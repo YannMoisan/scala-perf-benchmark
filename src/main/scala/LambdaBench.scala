@@ -1,23 +1,8 @@
 package foo
 
 import java.util.concurrent.TimeUnit
-import scala.collection.breakOut
 
-import org.openjdk.jmh.annotations.{
-  Benchmark,
-  BenchmarkMode,
-  Fork,
-  Measurement,
-  Mode,
-  OutputTimeUnit,
-  Scope,
-  Setup,
-  State,
-  Threads,
-  Warmup
-}
-
-import scala.util.Random
+import org.openjdk.jmh.annotations._
 
 @State(Scope.Benchmark)
 @BenchmarkMode(Array(Mode.AverageTime))

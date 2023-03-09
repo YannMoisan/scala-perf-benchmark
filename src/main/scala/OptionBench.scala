@@ -57,20 +57,12 @@ class OptionBench {
 
   var someInt: Option[Int] = _
 
-//  val wrongSomeString: Option[String] = Some("42")
-//
-//  val wrongSomeInt: Option[Int] = Some(42)
-
   @Setup
   def setUp(): Unit = {
     someString = Some("42")
     someInt = Some(42)
   }
 
-//  @Benchmark
-//  def wrongMapGetOrElseString(): String =
-//    wrongSomeString.map(_ + "!").getOrElse("default")
-//
   @Benchmark
   def mapGetOrElseString(): String =
     someString.map(_ + "!").getOrElse("default")
@@ -83,10 +75,6 @@ class OptionBench {
   def mapGetOrElseInt(): Int =
     someInt.map(_ + 1).getOrElse(0)
 
-//  @Benchmark
-//  def wrongMapGetOrElseInt(): Int =
-//    wrongSomeInt.map(_ + 1).getOrElse(0)
-//
   @Benchmark
   def foldInt(): Int =
     someInt.fold(0)(_ + 1)
